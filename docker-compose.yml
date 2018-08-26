@@ -3,8 +3,9 @@ version: '3'
 services:
 
   node:
-    image: keymetrics/pm2:8-alpine
-    port: 3000:3000
+    image: registry.gitlab.com/dixonsatit/test-ci-cd:latest
+    ports: 
+      - 3000:3000
 
   watchtower:
     image: v2tec/watchtower

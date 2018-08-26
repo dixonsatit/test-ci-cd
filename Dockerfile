@@ -8,4 +8,4 @@ RUN npm i
 
 VOLUME ["/app"]
 
-CMD ["pm2-docker", "start", "--auto-exit", "--env", "production", "process.yml"]
+CMD ["pm2-docker", "start", "--env", "production", "process.yml"]
