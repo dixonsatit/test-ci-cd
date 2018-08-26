@@ -1,8 +1,10 @@
-FROM keymetrics/pm2:8-alpine 
+FROM keymetrics/pm2:8-alpine as base
 
 WORKDIR /app
 
 COPY . .
+
+RUN npm i 
 
 VOLUME ["/app"]
 
