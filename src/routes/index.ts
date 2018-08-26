@@ -5,7 +5,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/',(req,res,next) => {
-  res.render('index', {title: 'Express Update gitlab'});
+  res.render('index', {title: 'Express Update gitlab CI'});
 });
 
 export default router;
