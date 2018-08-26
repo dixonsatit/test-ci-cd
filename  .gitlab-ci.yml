@@ -1,0 +1,18 @@
+image: docker:latest
+services:
+- docker:dind
+
+stages:
+- build
+
+variables:
+  CONTAINER_PROD_IMAGE: registry.gitlab.com/dixonsatit/test-ci-cd:latest
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t $CONTAINER_PROD_IMAGE  -f Dockerfile .
+    - docker push $CONTAINER_PROD_IMAGE
